@@ -2,16 +2,23 @@
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
-<title>Richt werkplekken in voor All Connected</title>
+<title>All Connected - Beroepsproject</title>
 
 <style>
 * {
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  padding: 24px;
+  background: #f3f3f3;
+}
+
 .tab-wrapper {
-  width: 1000px;
-  height: 500px;
+  width: min(1000px, 100%);
+  min-height: 500px;
+  height: auto;
   margin: 0 auto;
   font-family: Arial, sans-serif;
   overflow: hidden;
@@ -20,7 +27,8 @@
 }
 
 .banner {
-  height: 145px;
+  min-height: 145px;
+  height: auto;
   box-sizing: border-box;
   background: transparent;
   border-radius: 22px 22px 0 0;
@@ -59,22 +67,24 @@
 }
 
 .tab-page {
-  height: 355px;
+  min-height: 355px;
+  height: auto;
   display: flex;
-  gap: 12px;
+  align-items: stretch;
+  gap: 14px;
   border: none;
   border-radius: 0 0 22px 22px;
-  overflow: hidden;
+  overflow: visible;
   background: transparent;
-  padding: 0 14px 14px 0;
+  padding: 0 14px 14px 12px;
 }
 
 .tab-menu {
   flex: 0 0 205px;
   width: 205px;
   background: transparent;
-  padding: 8px 0 10px 12px;
-  overflow: hidden;
+  padding: 8px 0 10px 0;
+  overflow: visible;
   position: relative;
   z-index: 2;
 }
@@ -86,12 +96,14 @@
   background: rgba(255,255,255,0.08);
   color: white;
   text-align: left;
-  padding: 6px 12px;
-  margin-bottom: 4px;
+  padding: 7px 12px;
+  margin-bottom: 5px;
   border-radius: 8px;
   cursor: pointer;
   font-size: 13.2px;
-  line-height: 1.1;
+  line-height: 1.12;
+  position: relative;
+  z-index: 3;
 }
 
 .tab-button:hover,
@@ -103,14 +115,17 @@
 .tab-content-area {
   flex: 1 1 auto;
   min-width: 0;
-  height: 341px;
+  height: auto;
+  min-height: 341px;
+  max-height: none;
   padding: 14px 24px;
-  overflow-y: hidden;
+  overflow-y: auto;
   background: rgba(255,255,255,0.74);
   border-radius: 18px;
   backdrop-filter: blur(1px);
   position: relative;
   z-index: 1;
+  margin: 0;
 }
 
 .tab-content {
@@ -127,24 +142,30 @@
   font-size: 22px;
 }
 
+.tab-content h3 {
+  color: #24343a;
+  margin: 9px 0 5px;
+  font-size: 16px;
+}
+
 .tab-content p {
   font-size: 14px;
   line-height: 1.24;
-  margin: 0 0 5px;
+  margin: 0 0 7px;
   color: #24343a;
 }
 
 .tab-content ul,
 .tab-content ol {
-  margin: 4px 0 6px 20px;
+  margin: 4px 0 7px 20px;
   padding: 0;
 }
 
 .tab-content li {
   font-size: 14px;
   line-height: 1.22;
-  margin-bottom: 3px;
-  color: #9447F0;
+  margin-bottom: 4px;
+  color: #24343a;
 }
 
 .note,
@@ -159,23 +180,6 @@
   line-height: 1.22;
 }
 
-.action-link {
-  display: inline-block;
-  background: #9447F0;
-  color: #12333a;
-  text-decoration: none;
-  border-radius: 999px;
-  padding: 7px 13px;
-  font-weight: bold;
-  font-size: 13.5px;
-  margin-top: 4px;
-}
-
-.action-link:hover {
-  background:  #E5C7FE;
-  color: #12333a;
-}
-
 .badge {
   display: inline-block;
   background: #1e7e8f;
@@ -183,7 +187,32 @@
   border-radius: 999px;
   padding: 5px 10px;
   font-size: 12.5px;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 760px) {
+  body {
+    padding: 12px;
+  }
+
+  .tab-page {
+    flex-direction: column;
+    padding: 0 12px 14px;
+  }
+
+  .tab-menu {
+    width: 100%;
+    flex: 0 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 8px 0 0;
+  }
+
+  .tab-button {
+    width: auto;
+    margin-bottom: 0;
+  }
 }
 </style>
 </head>
@@ -193,103 +222,150 @@
 <div class="tab-wrapper">
 
   <section class="banner">
-    <h1>Richt werkplekken in voor All Connected</h1>
-    <p>Je werkt voor een start-up in de stylingbranche. Je bereidt werkzaamheden voor, richt devices en software in, zorgt voor verbinding en legt je werk duidelijk vast.</p>
+    <h1>All Connected: beroepsproject</h1>
+    <p>In dit beroepsproject leer je hoe je als ICT-medewerker klanten helpt met digitale vragen. Je werkt aan realistische situaties rond servicedesk, veiligheid, duurzaamheid, privacy en duidelijke communicatie.</p>
 
     <div class="chips">
-      <span>🔎 Voorbereiden</span>
-      <span>🛠️ Uitvoeren</span>
-      <span>💻 Hardware & software</span>
+      <span>💻 Medewerker ICT</span>
+      <span>🧑‍💼 Klantgericht werken</span>
+      <span>🔐 Veilig online</span>
+      <span>🌱 Duurzaam ICT-gebruik</span>
       <span>📁 Portfolio</span>
-      <span>✅ Bewijs verzamelen</span>
     </div>
   </section>
 
   <div class="tab-page">
     <div class="tab-menu">
-      <button class="tab-button active" onclick="openTab(event, 'over')">Opdracht</button>
-      <button class="tab-button" onclick="openTab(event, 'doen')">Wat ga je doen?</button>
-      <button class="tab-button" onclick="openTab(event, 'werkenaan')">Waar werk je aan?</button>
-      <button class="tab-button" onclick="openTab(event, 'voorbereiden')">Voorbereiden</button>
-      <button class="tab-button" onclick="openTab(event, 'stappen')">Stappen</button>
-      <button class="tab-button" onclick="openTab(event, 'project')">Beroepsproject</button>
+      <button class="tab-button active" onclick="openTab(event, 'over')">Over All Connected</button>
+      <button class="tab-button" onclick="openTab(event, 'welkom')">Welkom bij All Connected</button>
+      <button class="tab-button" onclick="openTab(event, 'groen')">Groen en digitaal</button>
+      <button class="tab-button" onclick="openTab(event, 'vraag')">De vraag achter de vraag</button>
+      <button class="tab-button" onclick="openTab(event, 'phishing')">Phishing en privacy</button>
+      <button class="tab-button" onclick="openTab(event, 'cloud')">Cloud en privacy</button>
+      <button class="tab-button" onclick="openTab(event, 'mail')">All Connected</button>
       <button class="tab-button" onclick="openTab(event, 'portfolio')">Portfolio</button>
-      <button class="tab-button" onclick="openTab(event, 'onthoud')">Onthoud</button>
     </div>
 
     <div class="tab-content-area">
 
       <div id="over" class="tab-content active">
-        <h2>All Connected</h2>
-        <p>In deze afsluitende module ga je aan de slag voor <strong>All Connected</strong>. Dit is een start-up in de stylingbranche.</p>
-        <p>All Connected heeft twee werkplekken nodig en wil ook graag met een tablet kunnen werken.</p>
-        <p>Jij bereidt de werkzaamheden voor, voert ze uit en legt duidelijk vast wat je hebt gedaan.</p>
-        <p class="note"><strong>Belangrijk:</strong> je werkt niet alleen aan het eindresultaat. Je laat ook zien hoe je hebt voorbereid, uitgevoerd, gecontroleerd en vastgelegd.</p>
-      </div>
-
-      <div id="doen" class="tab-content">
-        <h2>Wat ga je doen?</h2>
-        <p>Je richt de werkplekken in volgens de wensen van de medewerkers. Daarbij werk je met devices, software, instellingen en verbindingen.</p>
-        <p>Je installeert en configureert hardware en software. Denk hierbij ook aan Nederlandse en Engelse software.</p>
-        <p>Daarna controleer je of alles werkt. Wat je doet, leg je duidelijk vast met screenshots, foto’s, notities of ingevulde documenten.</p>
-        <p>Zo laat je zien dat je professioneel en volgens opdracht kunt werken.</p>
-      </div>
-
-      <div id="werkenaan" class="tab-content">
-        <h2>Waar werk je aan?</h2>
-        <p>In dit beroepsproject laat je zien dat je verschillende ICT-werkzaamheden kunt voorbereiden, uitvoeren en onderbouwen.</p>
+        <span class="badge">Leren door te helpen</span>
+        <h2>Over All Connected</h2>
+        <p>De wereld wordt steeds digitaler. Veel mensen, zoals ouderen, nieuwkomers, jongeren of mensen met een beperking, vinden het moeilijk om digitale apparaten slim en veilig te gebruiken.</p>
+        <p>Zij hebben hulp nodig bij het gebruik van hun computer, telefoon of tablet. Met de module <strong>All Connected</strong> leren mbo-studenten Medewerker ICT hoe zij hun technische kennis inzetten om klanten te helpen.</p>
+        <p>In realistische servicedesk-situaties werk je aan vragen over laptops, telefoons, netwerken en beveiliging.</p>
+        <h3>Je leert onder andere:</h3>
         <ul>
-          <li>Je maakt devices gebruiksklaar volgens opdracht en procedures.</li>
-          <li>Je installeert, configureert en onderhoudt software.</li>
-          <li>Je monteert en/of configureert netwerk- en infrastructuuronderdelen.</li>
-          <li>Je stemt werkzaamheden en klantwensen duidelijk af.</li>
-          <li>Je verzamelt bewijs en verwerkt dit netjes in je portfolio.</li>
+          <li>hoe je een werkplek veilig en gebruiksklaar maakt;</li>
+          <li>hoe je meldingen registreert, analyseert en oplost;</li>
+          <li>hoe je duidelijke uitleg geeft in begrijpelijke taal;</li>
+          <li>hoe je omgaat met privacy, AVG, cloudopslag, MFA en AI-tools.</li>
         </ul>
+        <p class="note"><strong>Belangrijk:</strong> All Connected bereidt je voor op je rol als ICT-professional én laat je ervaren hoe ICT maatschappelijk verschil kan maken.</p>
       </div>
 
-      <div id="voorbereiden" class="tab-content">
-        <h2>Eerst goed voorbereiden</h2>
-        <p>Lees de opdracht op de website van Stichting Praktijkleren goed door voordat je begint.</p>
-        <p>Bekijk welke devices, software, instellingen, materialen en bewijzen nodig zijn. Zo weet je wat er van je verwacht wordt.</p>
-        <p>Maak daarna een korte planning. Noteer ook vragen die je nog hebt voor je docent.</p>
-        <p class="info"><strong>Tip:</strong> een goede voorbereiding voorkomt dat je tijdens het uitvoeren belangrijke stappen vergeet.</p>
+      <div id="welkom" class="tab-content">
+        <span class="badge">Introductie</span>
+        <h2>Welkom bij All Connected!</h2>
+        <p>Je hebt een welkomstmail ontvangen van <strong>Sarah Rahma</strong>. Zij is de coördinator van All Connected.</p>
+        <p>Lees de e-mail goed door. In deze mail staat wat All Connected doet en wat jouw rol binnen het ICT-punt is.</p>
+        <h3>Let tijdens het lezen op deze vragen:</h3>
+        <ul>
+          <li>Wie komen er langs bij het ICT-punt?</li>
+          <li>Welke digitale vragen kunnen klanten hebben?</li>
+          <li>Wat wordt er van jou als medewerker verwacht?</li>
+          <li>Hoe kun je professioneel en klantgericht reageren?</li>
+        </ul>
+        <p class="info"><strong>Tip:</strong> maak korte aantekeningen. Die kun je later gebruiken bij opdrachten, gesprekken en je portfolio.</p>
       </div>
 
-      <div id="stappen" class="tab-content">
-        <h2>Werk in drie stappen</h2>
+      <div id="groen" class="tab-content">
+        <span class="badge">Duurzaam ICT-gebruik</span>
+        <h2>Groen en digitaal</h2>
+        <p>Tijdens de laatste vergadering in het buurthuis kwam een belangrijk onderwerp aan bod: <strong>duurzaamheid</strong>.</p>
+        <p>We helpen bewoners met digitale vragen, maar we willen ook beter zorgen voor het milieu en bewust omgaan met onze apparaten.</p>
+        <p>In de wijk worden veel oude telefoons, laptops en kabels weggegooid. Soms staan er zelfs nog persoonlijke gegevens op. Dat is niet veilig én niet goed voor het milieu.</p>
+        <p>Veel apparaten kunnen gerepareerd, hergebruikt of op een veilige manier ingeleverd worden.</p>
+        <p class="note"><strong>Opdracht:</strong> onderzoek hoe we bij All Connected en in de wijk duurzaam en veilig kunnen omgaan met ICT-apparaten.</p>
+      </div>
+
+      <div id="vraag" class="tab-content">
+        <span class="badge">Klantvraag analyseren</span>
+        <h2>De vraag achter de vraag</h2>
+        <p>Sarah Rahma is blij met je onderzoek naar duurzaam ICT-gebruik. Ze heeft de resultaten verzameld en neemt jouw onderzoek mee naar de volgende vergadering.</p>
+        <p>Je hebt ervaring opgedaan met onderzoek doen en advies geven. Ook kun je schriftelijk reageren op klantvragen.</p>
+        <p>In dit onderdeel ga je verder met het analyseren van klantvragen. Soms stelt een klant een vraag, maar zit daar een andere hulpvraag achter.</p>
+        <h3>Je oefent met:</h3>
+        <ul>
+          <li>goed luisteren en doorvragen;</li>
+          <li>de echte hulpvraag herkennen;</li>
+          <li>informatie helder samenvatten;</li>
+          <li>een passende en klantvriendelijke reactie geven.</li>
+        </ul>
+        <p class="info"><strong>Onthoud:</strong> een goede ICT-medewerker lost niet alleen het technische probleem op, maar helpt de klant ook begrijpen wat er gebeurt.</p>
+      </div>
+
+      <div id="phishing" class="tab-content">
+        <span class="badge">Veilig online</span>
+        <h2>Phishing en privacy</h2>
+        <p>Je hebt weer een nieuwe mail ontvangen. In dit onderdeel onderzoek je of een bericht betrouwbaar is en hoe je veilig kunt reageren.</p>
+        <p>Klanten krijgen regelmatig verdachte e-mails, sms'jes of meldingen. Soms lijkt een bericht echt, maar probeert iemand gegevens, geld of toegang tot een account te krijgen.</p>
+        <h3>Je gaat aan de slag met:</h3>
+        <ul>
+          <li>kenmerken van phishing herkennen;</li>
+          <li>controleren of een afzender betrouwbaar is;</li>
+          <li>uitleg geven in begrijpelijke taal;</li>
+          <li>zorgvuldig omgaan met persoonsgegevens en privacy;</li>
+          <li>advies geven over veilige vervolgstappen.</li>
+        </ul>
+        <p class="note"><strong>Belangrijk:</strong> klik niet zomaar op links en vraag nooit om wachtwoorden of beveiligingscodes van klanten.</p>
+      </div>
+
+      <div id="cloud" class="tab-content">
+        <span class="badge">Cloudopslag</span>
+        <h2>Cloud en privacy</h2>
+        <p>In het buurthuis krijgen we vaak vragen over de cloud, zoals: <em>Wat is de cloud eigenlijk?</em>, <em>Waar staat de cloud?</em> of <em>Kan iemand anders bij mijn foto's?</em></p>
+        <p>In de volgende opdrachten ga je hiermee aan de slag. Je leert hoe je de cloud op een eenvoudige manier uitlegt aan klanten.</p>
+        <h3>Je onderzoekt:</h3>
+        <ul>
+          <li>wat cloudopslag is;</li>
+          <li>waar bestanden worden opgeslagen;</li>
+          <li>welke risico's er zijn voor privacy en veiligheid;</li>
+          <li>hoe je klanten helpt met veilige instellingen;</li>
+          <li>hoe je uitlegt wat synchroniseren, delen en back-uppen betekent.</li>
+        </ul>
+        <p class="info"><strong>Tip:</strong> gebruik voorbeelden uit het dagelijks leven, zoals foto's op een telefoon of bestanden in OneDrive, Google Drive of iCloud.</p>
+      </div>
+
+      <div id="mail" class="tab-content">
+        <span class="badge">Nieuwe melding</span>
+        <h2>All Connected</h2>
+        <p>Er staat weer een mailtje voor je klaar. Lees de mail aandachtig en bepaal wat de klant precies nodig heeft.</p>
+        <p>In dit onderdeel oefen je met het verwerken van een nieuwe melding. Je kijkt niet alleen naar de tekst van de mail, maar ook naar de context, de urgentie en de mogelijke vervolgstappen.</p>
+        <h3>Werk stap voor stap:</h3>
         <ol>
-          <li><strong>Lees:</strong> open het beroepsproject en lees de opdracht, eisen en opleverpunten.</li>
-          <li><strong>Plan:</strong> bepaal welke stappen je gaat uitvoeren en welke materialen je nodig hebt.</li>
-          <li><strong>Bewijs:</strong> maak tijdens het werken screenshots, foto’s, notities en ingevulde documenten.</li>
+          <li>Lees de mail rustig door.</li>
+          <li>Noteer de belangrijkste gegevens.</li>
+          <li>Bepaal wat de hulpvraag is.</li>
+          <li>Kies welke actie nodig is.</li>
+          <li>Formuleer een duidelijke reactie voor de klant.</li>
         </ol>
-        <p>Door in stappen te werken houd je overzicht. Je kunt beter uitleggen wat je hebt gedaan en waarom je bepaalde keuzes hebt gemaakt.</p>
-      </div>
-
-      <div id="project" class="tab-content">
-        <h2>Open het beroepsproject</h2>
-        <p>Het beroepsproject wordt uitgevoerd via Stichting Praktijkleren. Gebruik de knop hieronder om naar All Connected te gaan.</p>
-        <p>Lees de opdracht goed door en controleer welke producten, documenten en bewijzen je uiteindelijk moet opleveren.</p>
-        <p><a class="action-link" href="https://www.stichtingpraktijkleren.nl/index.php?id=150866" target="_blank" rel="noopener">Ga naar All Connected</a></p>
-        <p class="info"><strong>Let op:</strong> maak eerst duidelijk wat je moet doen voordat je begint met installeren of configureren.</p>
+        <p class="note"><strong>Doel:</strong> laat zien dat je een melding professioneel kunt lezen, analyseren en opvolgen.</p>
       </div>
 
       <div id="portfolio" class="tab-content">
-        <h2>Portfolio bijhouden</h2>
-        <p>Zet je bewijzen, uitwerkingen, screenshots, notities, servicebonnen en andere resultaten netjes in je portfolio.</p>
-        <p>Aan het einde van het beroepsproject voeg je ook de zelfbeoordeling uit de volgende pagina toe aan je portfolio.</p>
+        <span class="badge">Bewijs verzamelen</span>
+        <h2>Portfolio</h2>
+        <p>Verzamel tijdens het werken bewijs voor je portfolio. Zo laat je zien wat je hebt geleerd en hoe je hebt gewerkt aan het beroepsproject.</p>
+        <h3>Voorbeelden van bewijs:</h3>
         <ul>
-          <li>Bewijs van voorbereiding.</li>
-          <li>Bewijs van uitvoering.</li>
-          <li>Bewijs van controle.</li>
-          <li>Reflectie of zelfbeoordeling.</li>
+          <li>aantekeningen van klantvragen en opdrachten;</li>
+          <li>uitwerkingen van onderzoeken en adviezen;</li>
+          <li>screenshots van resultaten of ingevulde documenten;</li>
+          <li>voorbeelden van klantvriendelijke reacties;</li>
+          <li>een korte reflectie op wat goed ging en wat je nog wilt verbeteren.</li>
         </ul>
-      </div>
-
-      <div id="onthoud" class="tab-content">
-        <h2>Onthoud dit goed</h2>
-        <p>Je werkt voor een klant. Daarom is het belangrijk dat je netjes voorbereidt, duidelijk communiceert en controleert of alles werkt.</p>
-        <p>Bewaar tijdens het werken meteen je bewijs. Wacht daar niet mee tot het einde, want dan vergeet je snel wat je precies hebt gedaan.</p>
-        <p class="note"><strong>Belangrijk:</strong> laat in je portfolio zien wat je hebt gedaan, hoe je dat hebt aangepakt en waarom je keuzes logisch zijn.</p>
+        <p class="info"><strong>Tip:</strong> bewaar niet alleen je eindproducten, maar ook bewijs van je denkstappen en leerproces.</p>
       </div>
 
     </div>
