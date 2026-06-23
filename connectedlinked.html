@@ -230,6 +230,48 @@
   z-index: 3;
 }
 
+
+
+/* Aanpassing: onderste sectie (menu + wit tekstvlak) verder omlaag, zonder de banner te wijzigen */
+.tab-wrapper {
+  width: min(1000px, 100%);
+  height: 500px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.banner {
+  height: 145px;
+  min-height: 0;
+}
+
+.tab-page {
+  height: 300px;
+  min-height: 0;
+  margin-top: 40px;
+  align-items: stretch;
+  padding: 0 14px 14px 12px;
+  gap: 14px;
+  overflow: hidden;
+}
+
+.tab-menu {
+  flex: 0 0 205px;
+  width: 205px;
+  padding-left: 0;
+  overflow: visible;
+}
+
+.tab-content-area {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 286px;
+  min-height: 0;
+  max-height: 286px;
+  overflow: hidden;
+  margin: 0;
+}
+
 @media (max-width: 760px) {
   .tab-page {
     flex-direction: column;
